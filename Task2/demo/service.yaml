@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: task-manager-backend-service
+spec:
+  selector:
+    app: task-manager-backend
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: NodePort  # Use LoadBalancer for cloud services, NodePort for Minikube
